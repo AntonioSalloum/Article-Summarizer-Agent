@@ -1,0 +1,11 @@
+python-dotenv
+pydantic
+langchain
+langchain-core
+langchain-openai
+langchain-openrouter
+langgraph
+deepagents
+fastapi
+uvicorn
+trafilatura

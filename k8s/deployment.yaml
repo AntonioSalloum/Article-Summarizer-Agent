@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: article-summarizer-agent
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: article-summarizer-agent
+  template:
+    metadata:
+      labels:
+        app: article-summarizer-agent
+    spec:
+      containers:
+      - name: article-summarizer-agent
+        image: article-summarizer-agent:latest
+        ports:
+        - containerPort: 8000
+        env:
+        - name: MODEL_PATH
+          valueFrom:
+            configMapKeyRef:
+              name: article-summarizer-agent
+              key: MODEL_PATH
+        - name: LOG_LEVEL
+          valueFrom:
+            configMapKeyRef:
+              name: article-summarizer-agent
+              key: LOG_LEVEL
+        - name: PORT
+          valueFrom:
+            configMapKeyRef:
+              name: article-summarizer-agent
+              key: PORT
