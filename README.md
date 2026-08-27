@@ -4,7 +4,6 @@
 
 This project is a conversational article summarization API built with FastAPI and a LangChain/LangGraph agent. Given a URL, the agent fetches the page, extracts the article's readable content (stripping nav bars, ads, scripts, and other page chrome), stores it in short-term memory, and lets the user ask follow-up questions about it (summaries, tone analysis, entity extraction, etc.) using conversational memory instead of a single-shot summarize-and-done response.
 
-This project is part of an ongoing AI/ML engineering portfolio, applying agentic LLM workflows (tool use, checkpointer-backed memory, multi-turn state) on top of a real FastAPI service rather than a notebook-only exercise.
 
 ## Requirements
 
